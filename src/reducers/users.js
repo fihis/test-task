@@ -5,26 +5,38 @@ const initialState = {
     editableUser: null
 }
 
-//console.log('initial state', initialState)
-
-
 const users = (state = initialState, action) => {
     console.log('reducer state', state);
     switch (action.type) {
         case 'EDIT_USER':
-            //console.log('find user in reducer',state.users.find( user => user.id === action.id))
-            console.log('EDIT_USER triggered');
             return {
                 ...state,
-                editableUser: state.users.find( user => user.id === action.id)
+                editableUser: state.users.find(user => user.id === action.id)
             };
+
         case 'SAVE_USER':
-            console.log('SAVE_USER triggered');
             return {
                 ...state,
-                users: state.users.map( user => {if (user.id === state.editableUser.id) return state.editableUser}),
+                users: state.users.map( user => {
+                    if (user.id === state.editableUser.id) 
+                        return state.editableUser;
+                    return user;
+                    }),
                 editableUser: null
             }
+
+        case 'CLOSE_DETAILS':
+            return {
+                ...state,
+                editableUser: null
+            }
+
+        case 'CHANGE_USER_DETAILS':
+            return {
+                ...state,
+                editableUser: { ...state.editableUser, [action.target]: action.value }
+            }
+
         default:
             return state;
     }

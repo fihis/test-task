@@ -154,6 +154,10 @@ main {
   height: 80px;
 }
 
+.users-list td {
+ cursor: pointer;
+}
+
 .last-name {
   color: #999999;
 }
@@ -219,6 +223,10 @@ button {
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+}
+
+.cross {
+  cursor: pointer;
 }
 
 .popup-inner .wrapper {
@@ -313,6 +321,7 @@ button {
 
 .buttons-block button {
   margin: 0 10px ;
+  cursor: pointer;
 }
 
 button.save-btn {

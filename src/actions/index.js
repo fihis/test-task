@@ -3,8 +3,19 @@ export const editUser = id => ({
     id
 })
 
-export const saveUser = () => ({
-    type: 'SAVE_USER'
+export const saveUser = (id) => ({
+    type: 'SAVE_USER',
+    id
 })
 
+
+export const closeDetails = () => ({
+    type: 'CLOSE_DETAILS'
+})
+
+export const changeUserDetails = (target, value) => ({
+    type: 'CHANGE_USER_DETAILS',
+    target,
+    value
+})
 
