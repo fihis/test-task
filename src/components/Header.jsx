@@ -1,6 +1,15 @@
 import React from 'react';
 
-export const Header = () => {
+export const Header = ({ filter, changeFilter, filterTable}) => {
+
+    const handleChangeFilter = event => {
+        changeFilter(event.target.value);
+    }
+
+    const handleFilterTable = () => {
+        filterTable();
+    }
+
     return (
         <header>
             <div className = 'wrapper'>
@@ -13,9 +22,9 @@ export const Header = () => {
             <div className = 'wrapper'>
                 <div className = 'search-bar'>
                     <img src={require('../assets/search.png')} alt='Search' />
-                    <input type='search' placeholder='Search' name='search' id='search' />
+                    <input type='search' placeholder='Search' name='search' id='search' value={filter} onChange={handleChangeFilter}/>
                 </div>
-                <button className = 'table-filter'>Table Filter</button>
+                <button className = 'table-filter' onClick={handleFilterTable}>Table Filter</button>
             </div>
             <div className = 'user-menu'>
                 <span className = 'current-user'>Dale McCornick</span>

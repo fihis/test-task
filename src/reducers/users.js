@@ -2,12 +2,13 @@ import MockUsers from '../infrastructure/Mocks'
 
 const initialState = {
     users: MockUsers,
-    editableUser: null
+    editableUser: null,
+    filter: ''
 }
 
 const users = (state = initialState, action) => {
-    console.log('reducer state', state);
     switch (action.type) {
+
         case 'EDIT_USER':
             return {
                 ...state,
@@ -17,11 +18,11 @@ const users = (state = initialState, action) => {
         case 'SAVE_USER':
             return {
                 ...state,
-                users: state.users.map( user => {
-                    if (user.id === state.editableUser.id) 
+                users: state.users.map(user => {
+                    if (user.id === state.editableUser.id)
                         return state.editableUser;
                     return user;
-                    }),
+                }),
                 editableUser: null
             }
 
@@ -37,6 +38,19 @@ const users = (state = initialState, action) => {
                 editableUser: { ...state.editableUser, [action.target]: action.value }
             }
 
+        case 'CHANGE_FILTER':
+            return {
+                ...state,
+                filter: action.filter
+            }
+
+        case 'FILTER_TABLE':
+            return {
+                ...state,
+                users: state.users.filter(user => Object.values(user).some(key => key.toString().toLowerCase().includes(state.filter.toLowerCase()))
+                )
+            }
+            
         default:
             return state;
     }

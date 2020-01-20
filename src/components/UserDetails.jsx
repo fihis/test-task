@@ -3,8 +3,8 @@ import React from 'react';
 export const UserDetails = ({ editableUser, saveUser, closeDetails, changeUserDetails }) => {
     const user = editableUser;
 
-    const saveClickHandler = (id) => {
-        saveUser(id);
+    const saveClickHandler = () => {
+        saveUser();
     }
 
     const crossClickHandler = () => {

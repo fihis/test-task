@@ -1,14 +1,10 @@
 import React from 'react';
-//import users from '../infrastructure/Mocks'
 
 export const UsersList = ( {users, editUser} ) => {
-    console.log('UsersList users', users)
+
     const onUserEdit = (event) => {
         editUser(event.target.closest('tr').id)
     }
-    // editUser (event) {
-    //     return users.find( element => element.id === event.target.id)
-    // }
     
     return (
         <table className='users-list'>

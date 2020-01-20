@@ -1,15 +1,15 @@
 import React from 'react';
 
-import { SideMenu } from '../components/SideMenu'
-import { Header } from '../components/Header';
+import { SideMenu } from '../components/SideMenu';
 
 import UserDetailsContainer from '../containers/UserDetailsContainer';
-import UsersListContainer from '../containers/UsersListContainer'
+import UsersListContainer from '../containers/UsersListContainer';
+import HeaderContainer from '../containers/HeaderContainer';
 
 export const UsersListPage = ( { editableUser } ) => {
     return (
         <>
-            <Header />
+            <HeaderContainer />
             <SideMenu />
             <main>
                 <UsersListContainer/>

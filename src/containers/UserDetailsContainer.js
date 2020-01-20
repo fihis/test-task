@@ -1,11 +1,9 @@
 import { connect } from 'react-redux';
+
 import { saveUser, closeDetails, changeUserDetails } from '../actions';
 import { UserDetails } from '../components/UserDetails';
 
-const mapStateToProps = state => {
-    return {editableUser: state.users.editableUser}
-};
-
+const mapStateToProps = state => ({editableUser: state.users.editableUser});
 
 const mapDispatchToProps = dispatch => ({
     saveUser: () => dispatch(saveUser()),

@@ -8,7 +8,6 @@ export const saveUser = (id) => ({
     id
 })
 
-
 export const closeDetails = () => ({
     type: 'CLOSE_DETAILS'
 })
@@ -19,3 +18,11 @@ export const changeUserDetails = (target, value) => ({
     value
 })
 
+export const changeFilter = (filter) => ({
+    type: 'CHANGE_FILTER',
+    filter
+})
+
+export const filterTable = () => ({
+    type: 'FILTER_TABLE'
+})

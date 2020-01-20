@@ -178,6 +178,7 @@ button {
   width: 121px;
   height: 41px;
   align-content: center;
+  cursor: pointer;
 }
 
 .show-more {
@@ -266,7 +267,6 @@ button {
 
 .field input {
   padding-left: 15px;
-  color: #999999;
 }
 
 .field.wide input {
