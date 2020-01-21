@@ -22,7 +22,3 @@ export const changeFilter = (filter) => ({
     type: 'CHANGE_FILTER',
     filter
 })
-
-export const filterTable = () => ({
-    type: 'FILTER_TABLE'
-})

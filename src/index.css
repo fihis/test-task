@@ -178,7 +178,6 @@ button {
   width: 121px;
   height: 41px;
   align-content: center;
-  cursor: pointer;
 }
 
 .show-more {
@@ -321,9 +320,9 @@ button {
 
 .buttons-block button {
   margin: 0 10px ;
-  cursor: pointer;
 }
 
 button.save-btn {
   background-color: #68c67c;
+  cursor: pointer;
 }

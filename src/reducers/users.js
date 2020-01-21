@@ -44,13 +44,6 @@ const users = (state = initialState, action) => {
                 filter: action.filter
             }
 
-        case 'FILTER_TABLE':
-            return {
-                ...state,
-                users: state.users.filter(user => Object.values(user).some(key => key.toString().toLowerCase().includes(state.filter.toLowerCase()))
-                )
-            }
-            
         default:
             return state;
     }

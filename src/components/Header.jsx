@@ -1,13 +1,9 @@
 import React from 'react';
 
-export const Header = ({ filter, changeFilter, filterTable}) => {
+export const Header = ({ filter, changeFilter }) => {
 
     const handleChangeFilter = event => {
         changeFilter(event.target.value);
-    }
-
-    const handleFilterTable = () => {
-        filterTable();
     }
 
     return (
@@ -24,7 +20,7 @@ export const Header = ({ filter, changeFilter, filterTable}) => {
                     <img src={require('../assets/search.png')} alt='Search' />
                     <input type='search' placeholder='Search' name='search' id='search' value={filter} onChange={handleChangeFilter}/>
                 </div>
-                <button className = 'table-filter' onClick={handleFilterTable}>Table Filter</button>
+                <button className = 'table-filter' disabled>Table Filter</button>
             </div>
             <div className = 'user-menu'>
                 <span className = 'current-user'>Dale McCornick</span>
